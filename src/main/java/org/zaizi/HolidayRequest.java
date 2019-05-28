@@ -1,12 +1,17 @@
 package org.zaizi;
 
+
 import org.flowable.engine.ProcessEngine;
 import org.flowable.engine.ProcessEngineConfiguration;
 import org.flowable.engine.RepositoryService;
 import org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration;
 import org.flowable.engine.repository.Deployment;
 import org.flowable.engine.repository.ProcessDefinition;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+@SpringBootApplication
 public class HolidayRequest {
     public static void main(String[] args) {
 
@@ -31,7 +36,7 @@ public class HolidayRequest {
         		  .singleResult();
         
         System.out.println("Found process Definition: "+ processDefinition.getName());
-        
-        
+
+        SpringApplication.run(HolidayRequest.class);
     }
 }
